@@ -12,6 +12,9 @@
     //background-color: red;
     font-size: 4rem;
     padding: 32px;
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   .navContainer__NavLinks li {
@@ -19,6 +22,9 @@
     display: inline-block;
     font-size: 2.2rem;
     padding: 0 32px;
+    &:hover {
+      cursor: pointer;
+    }
   }
 
 }
