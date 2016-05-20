@@ -27,12 +27,12 @@ ReactDOM.render(
     <Router history={browserHistory}>
       <Route path='/' component={App}>
         <IndexRoute component={Home}/>
-        <Route path="wow" component={Wow} />
+        {/*<Route path="wow" component={Wow} />
         <Route path="diablo3" component={Diablo} />
         <Route path="hearthstone" component={Hearthstone} />
         <Route path="overwatch" component={Overwatch} />
         <Route path="starcraft2" component={Starcraft} />
-        <Route path="hots" component={Heroes} />
+        <Route path="hots" component={Heroes} />*/}
       </Route>
     </Router>
   </Provider>,
