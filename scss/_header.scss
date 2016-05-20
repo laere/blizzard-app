@@ -1,16 +1,24 @@
 .navContainer {
-  background-color: blue;
+  align-items: center;
+  background-color: $whitegrey;
+  border-bottom: 1px solid #CCD0D5;
+  color: $white;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  align-items: center;
+  padding: 0 128px;
 
   .navContainer__Logo {
-
+    //background-color: red;
+    font-size: 4rem;
+    padding: 32px;
   }
 
-  .navContainer__NavLinks {
-
+  .navContainer__NavLinks li {
+    //background-color: red;
+    display: inline-block;
+    font-size: 2.2rem;
+    padding: 0 32px;
   }
 
 }

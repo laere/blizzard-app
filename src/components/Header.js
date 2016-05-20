@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../../scss/header.scss';
 
 export default class Header extends Component {
   render() {
@@ -7,7 +6,7 @@ export default class Header extends Component {
       <header>
         <nav role="navigation">
           <div className="navContainer">
-            <h1 className="navContainer__Logo">Logo</h1>
+            <div className="navContainer__Logo">Logo</div>
             <ul className="navContainer__NavLinks">
               <li>Link 1</li>
               <li>Link 2</li>
