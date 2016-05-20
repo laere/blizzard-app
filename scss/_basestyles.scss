@@ -10,22 +10,11 @@ html {
 
 body {
   font-family: $mainfont;
-  font-size: 2rem;
-  line-height: 1.5;
-  letter-spacing: 1;
 }
 
 img {
-    height: auto;
+  height: auto;
   max-width: 100%;
-}
-
-h2 {
-  font-size: 3rem;
-}
-
-p {
-  font-size: 2rem;
 }
 
 a {
@@ -36,7 +25,7 @@ ul {
   list-style-type: none;
 }
 
-header {
+div {
   padding: 0;
-  margin:  0;
+  margin: 0;
 }

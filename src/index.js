@@ -11,6 +11,7 @@ import Promise from 'redux-promise';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 // CONTAINERS
 import App from './app/app';
+import Home from './components/HomePage';
 //REDUCERS
 import rootReducer from './reducers/RootReducer';
 // Store with middleware.
@@ -23,7 +24,17 @@ const store = createStoreWithMiddleware(rootReducer);
 
 ReactDOM.render(
   <Provider store={store}>
-    <App/>
+    <Router history={browserHistory}>
+      <Route path='/' component={App}>
+        <IndexRoute component={Home}/>
+        <Route path="wow" component={Wow} />
+        <Route path="diablo3" component={Diablo} />
+        <Route path="hearthstone" component={Hearthstone} />
+        <Route path="overwatch" component={Overwatch} />
+        <Route path="starcraft2" component={Starcraft} />
+        <Route path="hots" component={Heroes} />
+      </Route>
+    </Router>
   </Provider>,
   document.querySelector('.container')
 );

@@ -1,0 +1,34 @@
+.homePage {
+    padding: 0;
+    margin: 0;
+
+    .homePage__HeroLink img {
+        height: auto;
+        width: 100%;
+    }
+
+    .edge--bottom {
+        @include angle(after);
+    }
+
+    .edge--bottom--reverse {
+        @include angle(after, true);
+    }
+
+    .edge--top {
+        @include angle(before);
+    }
+
+    .edge--top--reverse {
+        @include angle(before, true);
+    }
+
+    .edge--both {
+        @include angle(both);
+    }
+
+    .edge--both--reverse {
+        @include angle(both, true);
+    }
+
+}
