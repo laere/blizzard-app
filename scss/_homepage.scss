@@ -2,9 +2,13 @@
     padding: 0;
     margin: 0;
 
-    .homePage__HeroLink img {
+    .homePage__HeroLink {
         height: auto;
         width: 100%;
+        > img {
+            height: auto;
+            width: 100%;
+        }
     }
 
     .edge--bottom {

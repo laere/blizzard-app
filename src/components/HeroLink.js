@@ -5,7 +5,7 @@ const HeroLink = (props) => {
   return (
     <Link to={props.path}>
       <div className="homePage__HeroLink">
-        <img src={props.img} alt="WOW" />
+        <img src={props.img} alt="image of the game" />
       </div>
     </Link>
   );

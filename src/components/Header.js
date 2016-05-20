@@ -7,7 +7,9 @@ export default class Header extends Component {
       <header>
         <nav role="navigation">
           <div className="navContainer">
-            <div className="navContainer__Logo">Logo</div>
+            <Link to="/">
+              <div className="navContainer__Logo">Logo</div>
+            </Link>
             <ul className="navContainer__NavLinks">
               <li>Link 1</li>
               <li>Link 2</li>
