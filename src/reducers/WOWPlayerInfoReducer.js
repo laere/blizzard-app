@@ -27,14 +27,14 @@ export const playerInfo = (state = initialState, action) => {
         isFetching: false
       }
     default:
-    return state;
+      return state;
   }
 }
 
 export const playerSearchValue = (state = '', action) => {
   switch(action.type) {
     case actions.WOW_PLAYERINFO_SEARCHVALUE:
-      return state;
+      return action.player;
     default:
       return state;
   }
@@ -43,7 +43,7 @@ export const playerSearchValue = (state = '', action) => {
 export const realmSearchValue = (state = '', action) => {
   switch(action.type) {
     case actions.WOW_REALM_SEARCHVALUE:
-      return state;
+      return action.realm;
     default:
       return state;
   }

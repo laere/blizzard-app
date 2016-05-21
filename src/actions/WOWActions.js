@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 export const WOW_PLAYERINFO_REQUEST = 'WOW_PLAYERINFO_REQUEST';
 export const WOW_PLAYERINFO_SUCCESS = 'WOW_PLAYERINFO_SUCCESS';
 export const WOW_PLAYERINFO_FAILURE = 'WOW_PLAYERINFO_FAILURE';
@@ -36,7 +38,7 @@ export const fetch = (url) => {
     dispatch(request());
 
     return axios.get(url)
-      .then(res => dispatch(receive(WOW_PLAYERINFO_SUCCESS)))
+      .then(res => dispatch(receive(WOW_PLAYERINFO_SUCCESS, res.data)))
       .catch(res => dispatch(receive(WOW_PLAYERINFO_FAILURE)))
   }
 }

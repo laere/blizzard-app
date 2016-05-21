@@ -6,11 +6,11 @@ const SearchBar = (props) => {
       <form onSubmit={props.onSubmit}>
         <div>
           <span>Character Name:</span>
-          <input type="text" onChange={props}/>
+          <input type="text" value={props.value_1} onChange={props.onChange_1}/>
         </div>
         <div>
           <span>Realm Name:</span>
-          <input type="text" onChange={props}/>
+          <input type="text" value={props.value_2} onChange={props.onChange_2}/>
         </div>
         <div>
           <button>Search</button>

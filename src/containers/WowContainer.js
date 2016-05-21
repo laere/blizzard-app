@@ -23,40 +23,46 @@ class WowContainer extends React.Component {
   _handleOnSubmit(e) {
     e.preventDefault();
     const { fetchPlayerInfo, player, realm } = this.props;
-    fetchPlayerInfo(`https://us.api.battle.net/wow/${player}/${realm}/Peratryn?locale=en_US&apikey=vqt6xzgau4jhux79xrc69g89gbg73uqx`)
+    const apiKey = 'vqt6xzgau4jhux79xrc69g89gbg73uqx';
+    fetchPlayerInfo(`https://us.api.battle.net/wow/character/${realm}/${player}?locale=en_US&apikey=${apiKey}`);
   }
 
   _handlePlayerOnChange(e) {
-    const { player } = this.props;
-    trackPlayerValue(player);
+    const { trackPlayerValue } = this.props;
+    trackPlayerValue(e.target.value);
   }
 
   _handleRealmOnChange(e) {
-    const { player } = this.props;
-    trackRealmValue(realm);
+    const { trackRealmValue } = this.props;
+    trackRealmValue(e.target.value);
   }
 
   render() {
+    const { playerdata } = this.props;
+    console.log(playerdata);
     return (
-      <Wow />
+      <Wow playerdata={playerdata}
+           onSubmit={this._handleOnSubmit}
+           onPlayerChange={this._handlePlayerOnChange}
+           onRealmChange={this._handleRealmOnChange} />
     );
   }
 }
 
-  const mapStateToProps = (state) => {
-    return {
-      data: state.wow.playerInfo.data,
-      player: state.wow.playerSearchValue,
-      realm: state.wow.realmSearchValue
-    }
+const mapStateToProps = (state) => {
+  return {
+    playerdata: state.wow.playerInfo.data,
+    player: state.wow.playerSearchValue,
+    realm: state.wow.realmSearchValue
   }
+}
 
-  const mapDispatchToProps = (dispatch) => {
-    return {
-      fetchPlayerInfo: (url) => dispatch(fetch(url)),
-      trackPlayerValue: (player) => dispatch(playerSearchValue(player)),
-      trackRealmValue: (realm) => dispatch(realmSearchValue(realm))
-    }
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchPlayerInfo: (url) => dispatch(fetch(url)),
+    trackPlayerValue: (player) => dispatch(playerSearchValue(player)),
+    trackRealmValue: (realm) => dispatch(realmSearchValue(realm))
   }
+}
 
-  export default connect(mapStateToProps, mapDispatchToProps)(WowContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(WowContainer);

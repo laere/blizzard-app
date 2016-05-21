@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-var apiKey = 'vqt6xzgau4jhux79xrc69g89gbg73uqx';
 //  STORE METHODS
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
