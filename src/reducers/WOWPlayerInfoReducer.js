@@ -40,7 +40,17 @@ export const playerSearchValue = (state = '', action) => {
   }
 }
 
-export const wowPlayer = combineReducers({
+export const realmSearchValue = (state = '', action) => {
+  switch(action.type) {
+    case actions.WOW_REALM_SEARCHVALUE:
+      return state;
+    default:
+      return state;
+  }
+}
+
+export const wow = combineReducers({
   playerInfo,
   playerSearchValue,
+  realmSearchValue,
 });
