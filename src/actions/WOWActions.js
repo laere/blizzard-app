@@ -31,11 +31,11 @@ const receive = (type, data) => {
   }
 }
 
-export const fetch = (url, { params }) => {
+export const fetch = (url) => {
   return (dispatch) => {
     dispatch(request());
 
-    return axios.get(url, { params })
+    return axios.get(url)
       .then(res => dispatch(receive(WOW_PLAYERINFO_SUCCESS)))
       .catch(res => dispatch(receive(WOW_PLAYERINFO_FAILURE)))
   }
