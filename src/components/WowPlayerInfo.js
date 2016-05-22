@@ -38,6 +38,14 @@ const WowPlayerInfo = ({playerdata}) => {
                 </div>
               )}
             </div>
+            <div className="infoContainer__Info">
+              <h2>Titles</h2>
+              {x.titles.map(x =>
+                <div key={x.id}>
+                  <div>{x.name.replace('%s', '')}</div>
+                </div>
+              )}
+            </div>
           </div>
         );
       })}

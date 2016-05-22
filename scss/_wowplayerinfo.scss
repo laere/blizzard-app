@@ -1,7 +1,7 @@
 .infoContainer {
-  //background-color: red;
+  ///background-color: red;
   display: flex;
-  flex-flow: row;
+  flex-flow: row wrap;
   font-size: 2.75rem;
   font-weight: normal;
   justify-content: center;
@@ -9,7 +9,7 @@
 
   .infoContainer__Info {
     font-size: 1.9rem;
-    margin-right: 64px;
+    margin-right: 48px;
 
     > h2 {
       font-size: 2.3rem;
