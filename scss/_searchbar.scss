@@ -1,13 +1,34 @@
 .searchbar {
   align-items: center;
+  ///background-color: red;
   display: flex;
   flex-flow: col wrap;
   font-size: 3rem;
   justify-content: center;
+  margin-bottom: 80px;
   margin-top: 80px;
 
+  span {
+    font-size: 1.9rem;
+  }
+
   input {
+    border: 1px solid $whitegrey;
+    border-radius: 20px;
+    font-size: 1.9rem;
     margin: 16px;
+    padding: 4px 8px;
+    outline: none;
+  }
+
+  button {
+    background-color: $white;
+    border: 1px solid $whitegrey;
+    //border-bottom: 5px solid $whitegrey;
+    border-radius: 10px;
+    font-size: 2.2rem;
+    padding: 8px;
+    width: 100%;
   }
 
 }

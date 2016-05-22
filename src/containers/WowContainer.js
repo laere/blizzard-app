@@ -24,8 +24,9 @@ class WowContainer extends React.Component {
   _handleOnSubmit(e) {
     e.preventDefault();
     const { fetchPlayerInfo, player, realm } = this.props;
-    const apiKey = 'vqt6xzgau4jhux79xrc69g89gbg73uqx';
-    fetchPlayerInfo(`https://us.api.battle.net/wow/character/${realm}/${player}?locale=en_US&apikey=${apiKey}`);
+    const apiKey = 'vqt6xzgau4jhux79xrc69g89gbg73uqx',
+          fields = 'fields=mounts+guild+items+hunterPets+appearance+achievments+pet+talents+reputation+titles+stats+pvp+professions';
+    fetchPlayerInfo(`https://us.api.battle.net/wow/character/${realm}/${player}?${fields}&locale=en_US&apikey=${apiKey}`);
   }
 
   _handlePlayerOnChange(e) {
