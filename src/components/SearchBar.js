@@ -1,16 +1,16 @@
 import React, { Component, PropTypes } from 'react';
 
-const SearchBar = (props) => {
+const SearchBar = ({onSubmit, onPlayerChange, onRealmChange}) => {
   return (
     <div className="searchbar">
-      <form onSubmit={props.onSubmit}>
+      <form onSubmit={onSubmit}>
         <div>
           <span>Character Name:</span>
-          <input type="text" value={props.value_1} onChange={props.onChange_1}/>
+          <input type="text"  onChange={onPlayerChange}/>
         </div>
         <div>
           <span>Realm Name:</span>
-          <input type="text" value={props.value_2} onChange={props.onChange_2}/>
+          <input type="text"  onChange={onRealmChange}/>
         </div>
         <div>
           <button>Search</button>

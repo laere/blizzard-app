@@ -25,6 +25,19 @@ const WowPlayerInfo = ({playerdata}) => {
               <div>Members: {x.guild.members}</div>
               <div>Guild Achievement Points: {x.guild.achievementPoints}</div>
             </div>
+            <div className="infoContainer__Info">
+              <h2>Professions</h2>
+              {x.professions.primary.map(x =>
+                <div key={x.id}>
+                  <div>{x.name}: {x.rank} of {x.max}</div>
+                </div>
+              )}
+              {x.professions.secondary.map(x =>
+                <div key={x.id}>
+                  <div>{x.name}: {x.rank} of {x.max}</div>
+                </div>
+              )}
+            </div>
           </div>
         );
       })}

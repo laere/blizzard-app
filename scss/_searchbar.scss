@@ -5,7 +5,7 @@
   flex-flow: col wrap;
   font-size: 3rem;
   justify-content: center;
-  margin-bottom: 80px;
+  margin-bottom: 128px;
   margin-top: 80px;
 
   span {
@@ -16,8 +16,8 @@
     border: 1px solid $whitegrey;
     border-radius: 20px;
     font-size: 1.9rem;
-    margin: 16px;
     padding: 4px 8px;
+    margin: 16px 0;
     outline: none;
   }
 
@@ -27,6 +27,7 @@
     //border-bottom: 5px solid $whitegrey;
     border-radius: 10px;
     font-size: 2.2rem;
+    margin: 16px 0;
     padding: 8px;
     width: 100%;
   }

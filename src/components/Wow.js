@@ -6,9 +6,9 @@ const Wow = ({playerdata, onSubmit, onPlayerChange, onRealmChange}) => {
     return (
         <div>
             <SearchBar onSubmit={onSubmit}
-                       onChange_1={onPlayerChange}
-                       onChange_2={onRealmChange} />
-                   <WowPlayerInfo playerdata={playerdata} />
+                       onPlayerChange={onPlayerChange}
+                       onRealmChange={onRealmChange} />
+             <WowPlayerInfo playerdata={playerdata} />
         </div>
     );
 }
