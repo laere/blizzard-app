@@ -1,10 +1,22 @@
 import React, { Component, PropTypes } from 'react';
+import Loading from '../components/Loading';
+import shortid from 'shortid';
 
-export default class WowPlayerInfo extends Component {
-  render() {
-    return (
-      <div>
-      </div>
-    );
-  }
+const WowPlayerInfo = ({playerdata}) => {
+  return (
+    !playerdata.isFetching ?
+    <Loading name="Loading data..." /> :
+    <div>
+      {playerdata.map(x => {
+        return (
+          <div key={shortid.generate()}>
+            <span>{x.name}</span>
+            <span>{x.realm}</span>
+          </div>
+        );
+      })}
+    </div>
+  );
 }
+
+export default WowPlayerInfo;

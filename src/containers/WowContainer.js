@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { playerSearchValue, realmSearchValue, fetch } from '../actions/WOWActions';
 import Wow from '../components/Wow';
+import Loading from '../components/Loading';
 
 class WowContainer extends React.Component {
   static propTypes = {
@@ -39,7 +40,6 @@ class WowContainer extends React.Component {
 
   render() {
     const { playerdata } = this.props;
-    console.log(playerdata);
     return (
       <Wow playerdata={playerdata}
            onSubmit={this._handleOnSubmit}

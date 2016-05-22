@@ -2,7 +2,7 @@ import * as actions from '../actions/WOWActions';
 import { combineReducers } from 'redux';
 
 const initialState = {
-  data: null,
+  data: [],
   isFetching: false,
   receivedAt: null
 }
@@ -17,7 +17,7 @@ export const playerInfo = (state = initialState, action) => {
     case actions.WOW_PLAYERINFO_SUCCESS:
       return {
         ...state,
-        data: action.data,
+        data: state.data.concat(action.data),
         isFetching: false,
         receivedAt: Date.now(),
       }

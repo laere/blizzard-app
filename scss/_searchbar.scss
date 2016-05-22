@@ -1,0 +1,13 @@
+.searchbar {
+  align-items: center;
+  display: flex;
+  flex-flow: col wrap;
+  font-size: 3rem;
+  justify-content: center;
+  margin-top: 80px;
+
+  input {
+    margin: 16px;
+  }
+
+}

@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 
 const SearchBar = (props) => {
   return (
-    <div>
+    <div className="searchbar">
       <form onSubmit={props.onSubmit}>
         <div>
           <span>Character Name:</span>
