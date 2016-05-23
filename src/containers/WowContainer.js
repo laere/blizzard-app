@@ -1,8 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { playerSearchValue, realmSearchValue, fetch } from '../actions/WOWActions';
-import Wow from '../components/Wow';
-import Loading from '../components/Loading';
+import WowPlayerInfo from '../components/WowPlayerInfo';
+import SearchBar from '../components/SearchBar';
+
 
 class WowContainer extends React.Component {
   static propTypes = {
@@ -39,13 +40,19 @@ class WowContainer extends React.Component {
     trackRealmValue(e.target.value);
   }
 
+  _handleShowInfoOnClick(e) {
+    
+  }
+
   render() {
     const { playerdata } = this.props;
     return (
-      <Wow playerdata={playerdata}
-           onSubmit={this._handleOnSubmit}
-           onPlayerChange={this._handlePlayerOnChange}
-           onRealmChange={this._handleRealmOnChange} />
+      <div>
+        <SearchBar onSubmit={this._handleOnSubmit}
+                   onPlayerChange={this._handlePlayerOnChange}
+                   onRealmChange={this._handleRealmOnChange}/>
+        <WowPlayerInfo playerdata={playerdata} />
+      </div>
     );
   }
 }
