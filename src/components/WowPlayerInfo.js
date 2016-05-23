@@ -4,6 +4,7 @@ import PlayerInfo from './PlayerInfo';
 import Professions from './Professions';
 import Titles from './Titles';
 import Reputations from './Reputations';
+import Guild from './Guild';
 
 
 const WowPlayerInfo = ({playerdata}) => {
@@ -24,12 +25,7 @@ const WowPlayerInfo = ({playerdata}) => {
                 <div>Achievement Points: {x.achievementPoints}</div>
                 <div>Honorable Kills: {x.totalHonorableKills}</div>
               </div>
-              <div className="infoContainer__Info">
-                <h2>Guild Info</h2>
-                <div>Guild: {x.guild.name}</div>
-                <div>Members: {x.guild.members}</div>
-                <div>Guild Achievement Points: {x.guild.achievementPoints}</div>
-              </div>
+              <Guild guild={x.guild}/>
               <Professions professions={x.professions}/>
               <Titles titles={x.titles}/>
               <Reputations reputations={x.reputation}/>
