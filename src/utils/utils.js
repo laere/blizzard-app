@@ -1,9 +1,3 @@
-export const compare = (a, b) => {
-  if (a < b) {
-    return -1;
-  } else if ( a > b) {
-    return 1;
-  } else {
-    return 0;
-  }
+export const condition = (cond, result1, result2) => {
+  return cond === 1 ? result1 : result2;
 }

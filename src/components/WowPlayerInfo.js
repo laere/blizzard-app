@@ -1,11 +1,13 @@
 import React, { Component, PropTypes } from 'react';
 import shortid from 'shortid';
+import { condition } from '../utils/utils';
 import PlayerInfo from './PlayerInfo';
 import Professions from './Professions';
 import Titles from './Titles';
 import Reputations from './Reputations';
 import Guild from './Guild';
 import Talents from './Talents';
+
 
 
 const WowPlayerInfo = ({playerdata}) => {
@@ -20,8 +22,8 @@ const WowPlayerInfo = ({playerdata}) => {
                 <div>Name: {x.name}</div>
                 <div>Realm: {x.realm}</div>
                 <div>Level: {x.level}</div>
-                {x.gender === 1 ? <div>Gender: Female</div> : <div>Gender: Male</div>}
-                {x.faction === 1 ? <div>Faction: Horde</div> : <div>Faction: Alliance</div>}
+                {condition(x.gender, <div>Gender: Female</div>, <div>Gender: Male</div>)}
+                {condition(x.faction, <div>Faction: Horde</div>, <div>Faction: Alliance</div>)}
                 <div>Battlegroup: {x.battlegroup}</div>
                 <div>Achievement Points: {x.achievementPoints}</div>
                 <div>Honorable Kills: {x.totalHonorableKills}</div>
