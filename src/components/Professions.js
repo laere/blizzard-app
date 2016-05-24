@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 const Professions = ({professions}) => {
   return (
-    <div className="infoContainer__Info">
+    <div className="infoContainer__Info --professions">
       <button>Professions</button>
       {professions.primary.map(x =>
         <div key={x.id}>

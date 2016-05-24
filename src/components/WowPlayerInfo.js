@@ -5,6 +5,7 @@ import Professions from './Professions';
 import Titles from './Titles';
 import Reputations from './Reputations';
 import Guild from './Guild';
+import Talents from './Talents';
 
 
 const WowPlayerInfo = ({playerdata}) => {
@@ -15,7 +16,7 @@ const WowPlayerInfo = ({playerdata}) => {
           <div key={shortid.generate()}>
             <div className="infoContainer">
               <div className="infoContainer__Info">
-                <h2>Player Info</h2>
+                <button>Player Info</button>
                 <div>Name: {x.name}</div>
                 <div>Realm: {x.realm}</div>
                 <div>Level: {x.level}</div>
@@ -29,6 +30,7 @@ const WowPlayerInfo = ({playerdata}) => {
               <Professions professions={x.professions}/>
               <Titles titles={x.titles}/>
               <Reputations reputations={x.reputation}/>
+              <Talents talents={x.talents} />
             </div>
           </div>
         );

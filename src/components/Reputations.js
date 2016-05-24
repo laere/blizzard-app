@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 const Reputations = ({reputations}) => {
   return (
-    <div className="infoContainer__Info">
+    <div className="infoContainer__Info --reputations">
       <button>Reputations</button>
       {reputations.map(x =>{
         if(x.standing === 7) {
@@ -31,6 +31,14 @@ const Reputations = ({reputations}) => {
             <div key={x.id}>
               <div>Name: {x.name}</div>
               <div>Standing: Friendly</div>
+            </div>
+          );
+        }
+        else if(x.standing === 4) {
+          return (
+            <div key={x.id}>
+              <div>Name: {x.name}</div>
+              <div>Standing: Neutral</div>
             </div>
           );
         }
