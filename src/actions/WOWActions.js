@@ -5,6 +5,13 @@ export const WOW_PLAYERINFO_SUCCESS = 'WOW_PLAYERINFO_SUCCESS';
 export const WOW_PLAYERINFO_FAILURE = 'WOW_PLAYERINFO_FAILURE';
 export const WOW_PLAYERINFO_SEARCHVALUE = 'WOW_PLAYERINFO_SEARCHVALUE';
 export const WOW_REALM_SEARCHVALUE = 'WOW_REALM_SEARCHVALUE';
+export const WOW_SHOW_PLAYERINFO = 'WOW_SHOW_PLAYERINFO';
+
+export const showPlayerInfo = () => {
+  return {
+    type: WOW_SHOW_PLAYERINFO
+  }
+}
 
 export const playerSearchValue = (player) => {
   return {

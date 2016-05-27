@@ -7,8 +7,8 @@ import Titles from './Titles';
 import Reputations from './Reputations';
 import Guild from './Guild';
 import Talents from './Talents';
-
-
+import Items from './Items';
+import Mounts from './Mounts';
 
 const WowPlayerInfo = ({playerdata}) => {
   return (
@@ -33,6 +33,8 @@ const WowPlayerInfo = ({playerdata}) => {
               <Titles titles={x.titles}/>
               <Reputations reputations={x.reputation}/>
               <Talents talents={x.talents} />
+              <Items items={x.items} />
+              <Mounts mounts={x.mounts} />
             </div>
           </div>
         );

@@ -49,8 +49,21 @@ export const realmSearchValue = (state = '', action) => {
   }
 }
 
+export const showPlayerInfo = (state = { isShown: false }, action) => {
+  switch(action.type) {
+    case actions.WOW_SHOW_PLAYERINFO:
+      return {
+        ...state,
+        isShown: true
+      }
+    default:
+      return state;
+  }
+}
+
 export const wow = combineReducers({
   playerInfo,
   playerSearchValue,
   realmSearchValue,
+  showPlayerInfo
 });

@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { playerSearchValue, realmSearchValue, fetch } from '../actions/WOWActions';
+import { playerSearchValue, realmSearchValue, fetch, showPlayerInfo } from '../actions/WOWActions';
 import WowPlayerInfo from '../components/WowPlayerInfo';
 import SearchBar from '../components/SearchBar';
 
@@ -20,6 +20,7 @@ class WowContainer extends React.Component {
     this._handleOnSubmit = this._handleOnSubmit.bind(this);
     this._handlePlayerOnChange = this._handlePlayerOnChange.bind(this);
     this._handleRealmOnChange = this._handleRealmOnChange.bind(this);
+    this._handleShowInfoOnClick = this._handleShowInfoOnClick.bind(this);
   }
 
   _handleOnSubmit(e) {
@@ -41,7 +42,8 @@ class WowContainer extends React.Component {
   }
 
   _handleShowInfoOnClick(e) {
-    
+    const { showPlayerInfo } = this.props;
+    showPlayerInfo();
   }
 
   render() {
@@ -51,7 +53,8 @@ class WowContainer extends React.Component {
         <SearchBar onSubmit={this._handleOnSubmit}
                    onPlayerChange={this._handlePlayerOnChange}
                    onRealmChange={this._handleRealmOnChange}/>
-        <WowPlayerInfo playerdata={playerdata} />
+        <WowPlayerInfo playerdata={playerdata}
+                       showInfoOnClick={this._handleShowInfoOnClick}/>
       </div>
     );
   }
@@ -69,7 +72,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
     fetchPlayerInfo: (url) => dispatch(fetch(url)),
     trackPlayerValue: (player) => dispatch(playerSearchValue(player)),
-    trackRealmValue: (realm) => dispatch(realmSearchValue(realm))
+    trackRealmValue: (realm) => dispatch(realmSearchValue(realm)),
+    showPlayerInfo: () => dispatch(showPlayerInfo())
   }
 }
 
